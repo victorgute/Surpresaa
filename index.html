@@ -23,22 +23,23 @@
     </a-scene>
 
     <script>
-        // Função para carregar o poema do arquivo de texto
-        function loadPoem(url, callback) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', url, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    callback(xhr.responseText);
-                }
-            };
-            xhr.send();
-        }
+        // Defina o poema sem caracteres especiais
+        var poema = `Preta,
+Voce e como o sol que desponta no horizonte,
+Despertando o mundo com sua luz radiante.
+Sua presenca e um bosque sereno,
+Onde cada riso e como o sussurro das folhas ao vento.
+Seu olhar e o brilho das estrelas na noite clara,
+E um brilho tao forte que se torna impossivel de se ofuscar.
+Cada palavra sua e como o canto suave dos passaros,
+Que enche o ar com um encanto e frescor.
+Preta, voce e um jardim onde nascem os sonhos,
+Com a beleza de um campo florido e a graca de um rio tranquilo.
+Voce transforma o simples em algo grandioso,
+Como a natureza que transforma tudo em algo formoso.`;
 
-        // Carregar o poema e configurá-lo no elemento a-text
-        loadPoem('poema.txt', function (poemText) {
-            document.getElementById('poemText').setAttribute('value', poemText);
-        });
+        // Adicione o poema ao elemento a-text
+        document.getElementById('poemText').setAttribute('value', poema);
 
         // Add event listener to make the poem visible when the user taps on the screen
         document.querySelector('a-scene').addEventListener('click', function () {
@@ -48,6 +49,3 @@
     </script>
 </body>
 </html>
-
-
-
