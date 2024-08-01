@@ -23,23 +23,22 @@
     </a-scene>
 
     <script>
-        // Defina o poema com caracteres especiais diretamente no JavaScript
-        var poema = `Preta,
-Voc\u00ea \u00e9 como o sol que desponta no horizonte,
-Despertando o mundo com sua luz radiante.
-Sua presen\u00e7a \u00e9 um bosque sereno,
-Onde cada riso \u00e9 como o sussurro das folhas ao vento.
-Seu olhar \u00e9 o brilho das estrelas na noite clara,
-E um brilho t\u00e3o forte que se torna imposs\u00edvel de se ofuscar.
-Cada palavra sua \u00e9 como o canto suave dos p\u00e1ssaros,
-Que enche o ar com um encanto e frescor.
-Preta, voc\u00ea \u00e9 um jardim onde nascem os sonhos,
-Com a beleza de um campo florido e a gra\u00e7a de um rio tranquilo.
-Voc\u00ea transforma o simples em algo grandioso,
-Como a natureza que transforma tudo em algo formoso.`;
+        // Função para carregar o poema do arquivo de texto
+        function loadPoem(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    callback(xhr.responseText);
+                }
+            };
+            xhr.send();
+        }
 
-        // Adicione o poema ao elemento a-text
-        document.getElementById('poemText').setAttribute('value', poema);
+        // Carregar o poema e configurá-lo no elemento a-text
+        loadPoem('poema.txt', function (poemText) {
+            document.getElementById('poemText').setAttribute('value', poemText);
+        });
 
         // Add event listener to make the poem visible when the user taps on the screen
         document.querySelector('a-scene').addEventListener('click', function () {
@@ -49,5 +48,6 @@ Como a natureza que transforma tudo em algo formoso.`;
     </script>
 </body>
 </html>
+
 
 
