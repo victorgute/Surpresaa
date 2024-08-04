@@ -7,6 +7,10 @@
     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.js"></script>
     <style>
         body { margin: 0; overflow: hidden; background-color: #000; }
+        a-text { 
+            text-align: center; 
+            white-space: pre-wrap;
+        }
     </style>
 </head>
 <body>
@@ -16,7 +20,7 @@
         </a-entity>
 
         <a-entity id="poem" position="0 1.6 -2" visible="false">
-            <a-text id="poemText" color="#FF69B4" width="3" position="0 0 0" align="center" value="Preta, Voce e como o sol que desponta no horizonte, Despertando o mundo com sua luz radiante. Sua presenca e um bosque sereno, Onde cada riso e como o sussurro das folhas ao vento. Seu olhar e o brilho das estrelas na noite clara, E um brilho tao forte que se torna impossivel de se ofuscar. Cada palavra sua e como o canto suave dos passaros, Que enche o ar com um encanto e frescor. Preta, voce e um jardim onde nascem os sonhos, Com a beleza de um campo florido e a graca de um rio tranquilo. Voce transforma o simples em algo grandioso, Como a natureza que transforma tudo em algo formoso."></a-text>
+            <a-text id="poemText" color="#FF69B4" width="3" position="0 0 0" align="center" value="Preta,\n\nVoce e como o sol que surge no horizonte,\nIluminando o mundo com sua luz brilhante.\n\nSua presenca e um campo tranquilo,\nOnde cada sorriso e como o murmuro das folhas ao vento.\n\nSeu olhar e o brilho das estrelas na noite clara,\nE um brilho tao forte que nao pode ser apagado.\n\nCada palavra sua e como o canto suave dos passaros,\nQue enche o ar com um encanto fresco.\n\nPreta, voce e um jardim onde nascem os sonhos,\nCom a beleza de um campo florido e a graca de um rio calmo.\n\nVoce transforma o simples em algo grandioso,\nComo a natureza transforma tudo em algo belo."></a-text>
         </a-entity>
 
         <a-entity id="background" position="0 1.6 -2" geometry="primitive: plane; width: 3; height: 2" material="color: #000; opacity: 1" visible="false"></a-entity>
