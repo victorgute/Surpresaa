@@ -23,22 +23,22 @@
     </a-scene>
 
     <script>
-        // Defina o poema com caracteres especiais usando entidades HTML
-        var poema = `Preta,&lt;br&gt;
-Voc&ecirc; &eacute; como o sol que desponta no horizonte,&lt;br&gt;
-Despertando o mundo com sua luz radiante.&lt;br&gt;
-Sua presen&ccedil;a &eacute; um bosque sereno,&lt;br&gt;
-Onde cada riso &eacute; como o sussurro das folhas ao vento.&lt;br&gt;
-Seu olhar &eacute; o brilho das estrelas na noite clara,&lt;br&gt;
-E um brilho t&atilde;o forte que se torna imposs&iacute;vel de se ofuscar.&lt;br&gt;
-Cada palavra sua &eacute; como o canto suave dos p&aacute;ssaros,&lt;br&gt;
-Que enche o ar com um encanto e frescor.&lt;br&gt;
-Preta, voc&ecirc; &eacute; um jardim onde nascem os sonhos,&lt;br&gt;
-Com a beleza de um campo florido e a gra&ccedil;a de um rio tranquilo.&lt;br&gt;
-Voc&ecirc; transforma o simples em algo grandioso,&lt;br&gt;
+        // Defina o poema com caracteres especiais usando HTML diretamente
+        var poema = `Preta,<br>
+Você é como o sol que desponta no horizonte,<br>
+Despertando o mundo com sua luz radiante.<br>
+Sua presença é um bosque sereno,<br>
+Onde cada riso é como o sussurro das folhas ao vento.<br>
+Seu olhar é o brilho das estrelas na noite clara,<br>
+E um brilho tão forte que se torna impossível de se ofuscar.<br>
+Cada palavra sua é como o canto suave dos pássaros,<br>
+Que enche o ar com um encanto e frescor.<br>
+Preta, você é um jardim onde nascem os sonhos,<br>
+Com a beleza de um campo florido e a graça de um rio tranquilo.<br>
+Você transforma o simples em algo grandioso,<br>
 Como a natureza que transforma tudo em algo formoso.`;
 
-        // Adicione o poema ao elemento a-text
+        // Adicione o poema ao elemento a-text usando innerHTML
         document.getElementById('poemText').setAttribute('value', poema);
 
         // Adicione um ouvinte de evento para tornar o poema e o fundo visíveis quando o usuário clicar na tela
