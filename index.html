@@ -16,14 +16,23 @@
         </a-entity>
 
         <a-entity id="poem" position="0 1.6 -2" visible="false">
-            <a-text color="#FF69B4" width="3" position="0 0 0" align="center" value="Preta,&lt;br&gt;Você é como o sol que desponta no horizonte,&lt;br&gt;Despertando o mundo com sua luz radiante.&lt;br&gt;Sua presença é um bosque sereno,&lt;br&gt;Onde cada riso é como o sussurro das folhas ao vento.&lt;br&gt;Seu olhar é o brilho das estrelas na noite clara,&lt;br&gt;E um brilho tão forte que se torna impossível de se ofuscar.&lt;br&gt;Cada palavra sua é como o canto suave dos pássaros,&lt;br&gt;Que enche o ar com um encanto e frescor.&lt;br&gt;Preta, você é um jardim onde nascem os sonhos,&lt;br&gt;Com a beleza de um campo florido e a graça de um rio tranquilo.&lt;br&gt;Você transforma o simples em algo grandioso,&lt;br&gt;Como a natureza que transforma tudo em algo formoso."></a-text>
+            <!-- Linha para exibir o texto -->
+            <a-text id="poemText" color="#FF69B4" width="3" position="0 0 0" align="center"></a-text>
         </a-entity>
 
         <a-entity id="background" position="0 1.6 -2" geometry="primitive: plane; width: 3; height: 2" material="color: #000; opacity: 1" visible="false"></a-entity>
     </a-scene>
 
     <script>
-        // Adicione um ouvinte de evento para tornar o poema e o fundo visíveis quando o usuário clicar na tela
+        // Função para carregar o texto do arquivo e definir no a-text
+        fetch('poema.txt')
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('poemText').setAttribute('value', text);
+            })
+            .catch(error => console.error('Erro ao carregar o poema:', error));
+
+        // Adiciona um ouvinte de evento para tornar o poema e o fundo visíveis quando o usuário clicar na tela
         document.querySelector('a-scene').addEventListener('click', function () {
             var poem = document.getElementById('poem');
             var background = document.getElementById('background');
@@ -33,4 +42,3 @@
     </script>
 </body>
 </html>
-
